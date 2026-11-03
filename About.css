@@ -1,0 +1,671 @@
+
+
+:root {
+    --brand: #2854e8;
+    --dark: #1f2937;
+    --light: #f5f7fb;
+    --white: #ffffff;
+    --border: #d1d5db;
+    --accent: #f59e0b;
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--dark);
+    background-color: var(--light);
+    line-height: 1.6;
+}
+
+
+
+
+#site-header {
+    background-color: var(--white);
+    border-bottom: 2px solid var(--border);
+}
+
+
+
+nav a {
+    color: var(--dark);
+    text-decoration: none;
+}
+
+
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+
+    padding: 8px 50px;
+
+    background-color: white;
+}
+
+
+nav img {
+    width: 70px;
+    height: 70px;
+
+    object-fit: contain;
+
+    margin-right: 25px;
+}
+
+
+nav a {
+    font-size: 17px;
+    font-weight: bold;
+
+    padding: 10px 8px;
+}
+
+
+
+nav a:hover {
+    color: var(--brand);
+    text-decoration: underline;
+}
+
+
+nav a:focus {
+    color: var(--brand);
+
+    outline: 3px solid var(--accent);
+
+    outline-offset: 3px;
+}
+
+
+nav a:visited {
+    color: #5b21b6;
+}
+
+
+
+
+body > a[href="#main-content"] {
+    position: absolute;
+
+    left: -9999px;
+    top: 10px;
+
+    padding: 10px 15px;
+
+    background-color: var(--dark);
+    color: white;
+
+    text-decoration: none;
+
+    z-index: 1000;
+}
+
+
+body > a[href="#main-content"]:focus {
+    left: 10px;
+}
+
+
+
+
+main {
+    background-color: #e8eefc;
+
+   /* background-image: url("college.jpg");*/
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    padding: 30px;
+}
+
+
+
+figure {
+    width: 90%;
+
+    margin: 30px auto;
+
+    background-color: white;
+
+    border: 2px solid var(--border);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+
+figure img {
+    width: 100%;
+    height: 500px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+figcaption {
+    text-align: center;
+
+    padding: 12px;
+
+    background-color: white;
+
+    color: var(--dark);
+
+    font-weight: bold;
+}
+
+
+
+main {
+    width: 100%;
+
+    min-height: 500px;
+}
+
+
+
+h1 {
+    font-size: 36px;
+
+    color: var(--brand);
+
+    margin-bottom: 15px;
+}
+
+
+h2 {
+    font-size: 28px;
+
+    color: var(--brand);
+
+    margin-bottom: 15px;
+}
+
+
+h3 {
+    font-size: 22px;
+
+    margin-bottom: 12px;
+}
+
+
+p {
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    margin-bottom: 15px;
+}
+
+
+
+
+h1,
+h2,
+h3 {
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+
+
+  h1
+  {  background-color: white;
+
+    border: 2px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 30px;
+
+    margin: 30px 0;
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+   ========================================================= */
+
+main > section,
+main > article {
+    background-color: white;
+
+    border: 2px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 30px;
+
+    margin: 30px 0;
+}
+
+
+/* =========================================================
+   B17 - BORDERS AND ROUNDED CORNERS
+   ========================================================= */
+
+article,
+section {
+    border: 2px solid var(--border);
+
+    border-radius: 12px;
+}
+
+
+/* =========================================================
+   LISTS
+   ========================================================= */
+
+ul,
+ol {
+    padding-left: 30px;
+
+    margin-bottom: 15px;
+}
+
+
+li {
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   MARK ELEMENT
+   ========================================================= */
+
+mark {
+    padding: 2px 5px;
+
+    border-radius: 3px;
+}
+
+
+/* =========================================================
+   B19 - TEXT PROPERTIES
+   More than four text properties are used.
+   ========================================================= */
+
+.about-introduction {
+    text-align: center;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    word-spacing: 3px;
+
+    line-height: 1.6;
+}
+
+
+.about-introduction h1 {
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   B21 - USE SHORTHAND PROPERTIES
+   Examples:
+   margin: 30px 0;
+   padding: 30px;
+   border: 2px solid;
+   ========================================================= */
+
+.page-actions {
+    padding: 30px;
+
+    margin: 30px 0;
+
+    border: 2px solid var(--border);
+
+    border-radius: 12px;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+.page-actions a {
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    margin: 5px 10px 5px 0;
+
+    background-color: var(--brand);
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+}
+
+
+/* =========================================================
+   B15 - LINK HOVER AND FOCUS
+   ========================================================= */
+
+.page-actions a:hover {
+    background-color: #163bb5;
+
+    text-decoration: underline;
+}
+
+
+.page-actions a:focus {
+    outline: 3px solid var(--accent);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+button {
+    padding: 10px 18px;
+
+    margin: 5px;
+
+    background-color: var(--dark);
+
+    color: white;
+
+    border: 2px solid var(--dark);
+
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+
+button:hover {
+    opacity: 0.85;
+}
+
+
+button:focus {
+    outline: 3px solid var(--accent);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   B22 - SEVERAL KINDS OF VALUES
+
+   center = keyword
+   20px = px length
+   1.5 = unitless value
+   #ffffff = hexadecimal colour
+   white = named colour
+   ========================================================= */
+
+.keyboard-help {
+    text-align: center;
+
+    padding: 20px;
+
+    background-color: #ffffff;
+
+    color: var(--dark);
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+details {
+    margin: 15px 0;
+
+    padding: 15px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    background-color: #f9fafb;
+}
+
+
+summary {
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+summary:hover {
+    color: var(--brand);
+}
+
+
+/* =========================================================
+   ADDRESS
+   ========================================================= */
+
+address {
+    padding: 15px;
+
+    background-color: #f3f4f6;
+
+    border-left: 4px solid var(--brand);
+
+    font-style: normal;
+}
+
+
+/* =========================================================
+   CODE
+   ========================================================= */
+
+code {
+    padding: 3px 6px;
+
+    background-color: #e5e7eb;
+
+    border-radius: 4px;
+
+    font-family: "Courier New", monospace;
+}
+
+
+/* =========================================================
+   KBD
+   ========================================================= */
+
+kbd {
+    padding: 3px 7px;
+
+    border: 1px solid #999;
+
+    border-radius: 4px;
+
+    background-color: #eeeeee;
+
+    font-family: monospace;
+}
+
+
+/* =========================================================
+   SAMP
+   ========================================================= */
+
+samp {
+    padding: 4px 8px;
+
+    background-color: #e5e7eb;
+
+    border-radius: 4px;
+}
+
+
+/* =========================================================
+   B23 - WATCH THE CASCADE DECIDE
+   Both rules target the same element.
+   The second rule wins.
+   ========================================================= */
+
+.learning-example h2 {
+    color: red;
+}
+
+
+.learning-example h2 {
+    color: var(--brand);
+}
+
+
+/* =========================================================
+   B24 - BREAK SOMETHING ON PURPOSE
+
+   DO NOT USE THIS DURING NORMAL USE.
+
+   Intentionally incorrect property:
+
+   .broken-example {
+       colr: red;
+   }
+
+   "colr" is not a valid CSS property.
+   Uncomment it only for the B24 demonstration.
+   ========================================================= */
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    text-align: center;
+
+    padding: 40px 10%;
+
+    background-color: var(--dark);
+
+    color: white;
+
+    letter-spacing: 0.5px;
+
+    word-spacing: 2px;
+}
+
+
+footer h2 {
+    color: white;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+footer p {
+    line-height: 1.8;
+}
+
+
+footer address {
+    background-color: transparent;
+
+    border-left: none;
+
+    color: white;
+}
+
+
+/* =========================================================
+   B28 - ORGANISE THE STYLESHEET
+
+   1. Variables
+   2. Reset
+   3. Page
+   4. Navigation
+   5. Images
+   6. Content
+   7. Components
+   8. Footer
+   ========================================================= */
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    nav {
+        gap: 15px;
+
+        padding: 10px 20px;
+
+        flex-wrap: wrap;
+    }
+
+
+    nav img {
+        margin-right: 10px;
+    }
+
+
+    figure img {
+        height: 350px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    nav {
+        flex-direction: column;
+    }
+
+
+    nav img {
+        margin-right: 0;
+    }
+
+
+    figure img {
+        height: 250px;
+    }
+
+
+    h1 {
+        font-size: 28px;
+    }
+
+
+    h2 {
+        font-size: 23px;
+    }
+
+}

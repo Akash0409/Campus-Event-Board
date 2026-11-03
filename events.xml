@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<events>
+    <event id="1">
+        <title>HACER 2025 Conference</title>
+        <date>2025-12-19</date>
+        <dateLabel>19–20 Dec. 2025</dateLabel>
+        <seats>0</seats>
+        <free>true</free>
+        <online>false</online>
+        <category>Conference</category>
+        <description>19-20 Dec. 2025 - IIITV successfully organized HACER 2025 conference at ICD Campus Diu.</description>
+        <image>ICD.jpg</image>
+        <imageAlt>ICD Campus event venue</imageAlt>
+    </event>
+    <event id="2">
+        <title>7th Inter IIIT Sports Meet</title>
+        <date>2025-03-20</date>
+        <dateLabel>20–23 March 2025</dateLabel>
+        <seats>12</seats>
+        <free>true</free>
+        <online>false</online>
+        <category>Sports</category>
+        <description>Our students won Gold in Cricket, Silver in Table Tennis and Badminton, and Bronze in Carrom at the 7th Inter IIIT Sports Meet held at ABV IIITM Gwalior.</description>
+        <image>DUMAND_CAMPUS.jpg</image>
+        <imageAlt>Diu campus used for student activities</imageAlt>
+    </event>
+    <event id="3">
+        <title>Reduce E-Waste Recognition</title>
+        <date>2025-06-05</date>
+        <dateLabel>05 June 2025</dateLabel>
+        <seats>4</seats>
+        <free>true</free>
+        <online>false</online>
+        <category>Innovation</category>
+        <description>Our student, Mr. Satyam Aniyaliya secured 3rd place under the 'Reduce E-Waste' category in the Ideas4Life initiative by the Ministry of Environment, Forest &amp; Climate Change. His idea (ID 1364) was recognized under Mission LiFE.</description>
+        <image>GNC.jpg</image>
+        <imageAlt>Gandhinagar campus for student innovation activities</imageAlt>
+    </event>
+</events>

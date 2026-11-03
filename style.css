@@ -1,0 +1,781 @@
+* {
+    box-sizing: border-box;
+}
+
+/* A2: CSS colour palette */
+:root {
+    --brand: #2854e8;
+    --brand-dark: rgb(27 58 158);
+    --accent: hsl(38 92% 56%);
+    --ink: #1f2937;
+    --paper: #f4f7fb;
+    --surface: #ffffff;
+    --muted: #667085;
+    --border: #d7deea;
+    --soft: #eef3ff;
+    --overlay: rgb(16 31 64 / 62%);
+    --success: #166534;
+    --danger: #b42318;
+    --shadow: 0 2px 8px rgb(0 0 0 / 8%);
+
+    /* A5: Typography system */
+    --font-body: Arial, Helvetica, sans-serif;
+    --font-heading: Georgia, "Times New Roman", serif;
+    --text-xs: 0.8rem;
+    --text-sm: 0.95rem;
+    --text-base: 1rem;
+    --text-lg: 1.2rem;
+    --text-xl: 1.55rem;
+    --text-2xl: 2rem;
+    --space-1: 0.5rem;
+    --space-2: 0.75rem;
+    --space-3: 1rem;
+    --space-4: 1.5rem;
+    --space-5: 2rem;
+    --space-6: 3rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.5;
+}
+
+/* A7: Reusable centred container */
+.container {
+    width: min(90%, 60rem);
+    margin: 0 auto;
+}
+
+/* A4: Relative units, including rem and clamp() */
+h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.1;
+    margin: 0 0 var(--space-3);
+}
+
+h2 {
+    font-size: clamp(1.55rem, 3vw, 2.1rem);
+    line-height: 1.2;
+    margin: 0 0 var(--space-2);
+}
+
+h3 {
+    font-size: var(--text-lg);
+    line-height: 1.3;
+    margin: 0 0 var(--space-2);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+}
+
+p {
+    max-width: 65ch;
+    margin: 0 0 var(--space-3);
+}
+
+small,
+.eyebrow,
+.event-card__tag {
+    font-size: var(--text-xs);
+}
+
+.eyebrow {
+    margin-bottom: var(--space-1);
+    color: var(--brand);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--brand);
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.skip-link {
+    position: absolute;
+    top: var(--space-2);
+    left: -9999px;
+    z-index: 2000;
+    padding: var(--space-2) var(--space-3);
+    color: var(--surface);
+    background: var(--ink);
+    text-decoration: none;
+    border-radius: 0.4rem;
+}
+
+.skip-link:focus {
+    left: var(--space-3);
+}
+
+/* B2: CSS Grid page layout */
+.site-shell {
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+    grid-template-columns: 1fr;
+}
+
+.site-header {
+    grid-area: header;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+    padding: var(--space-2) 0;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.brand img {
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: contain;
+}
+
+.brand-text {
+    display: grid;
+    gap: 0.1rem;
+}
+
+.brand-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+}
+
+.brand-subtitle {
+    color: var(--muted);
+    font-size: var(--text-sm);
+}
+
+.main-nav {
+    grid-area: nav;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 3.5rem;
+}
+
+/* B6: Hamburger is visible on phones; no JavaScript behavior is required yet */
+.menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: 0.55rem 0.8rem;
+    color: var(--ink);
+    background: var(--soft);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: none;
+    align-items: center;
+    gap: clamp(0.75rem, 2vw, 1.75rem);
+    width: 100%;
+}
+
+.nav-links a {
+    padding: 0.65rem 0.3rem;
+    color: var(--ink);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--brand);
+    border-bottom-color: var(--brand);
+}
+
+.nav-links a:active {
+    color: var(--brand-dark);
+}
+
+/* B7: Responsive hero image and fluid typography */
+.hero {
+    padding-top: var(--space-4);
+    padding-bottom: var(--space-4);
+    background: var(--soft) url("web2.jpg") center / cover no-repeat;
+    border-radius: 1rem;
+}
+
+.hero-media {
+    position: relative;
+    overflow: hidden;
+    min-height: calc(18rem + 2vw);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.hero-media > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: calc(18rem + 2vw);
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: clamp(1.25rem, 4vw, 2.5rem);
+    color: var(--surface);
+    background: linear-gradient(to top, var(--overlay), rgb(16 31 64 / 0%));
+}
+
+.hero-overlay h1,
+.hero-overlay p {
+    max-width: 65ch;
+}
+
+.hero-overlay .eyebrow {
+    color: var(--accent);
+}
+
+.site-main {
+    grid-area: main;
+    padding-bottom: var(--space-6);
+}
+
+/* B5: Base mobile-first layout */
+.content-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+}
+
+.events-panel,
+.sidebar {
+    min-width: 0;
+}
+
+.section-heading {
+    margin-bottom: var(--space-4);
+}
+
+.compact-heading {
+    margin-bottom: var(--space-3);
+}
+
+.event-quote {
+    margin: var(--space-4) 0 0;
+    padding: var(--space-3) var(--space-3) var(--space-3) 2.75rem;
+    position: relative;
+    color: var(--muted);
+    font-style: italic;
+    background: var(--soft);
+    border-left: 4px solid var(--brand);
+    border-radius: 0.6rem;
+}
+
+.event-quote::before {
+    content: "\201C";
+    position: absolute;
+    left: 0.85rem;
+    top: 0.25rem;
+    color: var(--brand);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* A8 + B3: Reusable event card and responsive card grid */
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: var(--space-4);
+    margin-bottom: var(--space-5);
+}
+
+.event-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.9rem;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.event-card:hover {
+    transform: translateY(-0.2rem);
+    box-shadow: 0 0.65rem 1.3rem rgb(0 0 0 / 12%);
+}
+
+.event-card__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.event-card__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: var(--space-4);
+}
+
+.event-card__tag {
+    margin-bottom: 0.4rem;
+    color: var(--brand);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.event-card__text {
+    margin-bottom: 0;
+    color: var(--muted);
+}
+
+/* A7 + A8: Shared section card box model */
+.section-card {
+    margin: 0 0 var(--space-5);
+    padding: var(--space-4);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.9rem;
+    box-shadow: var(--shadow);
+}
+
+.quick-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    gap: var(--space-2);
+}
+
+.quick-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    padding: var(--space-2) var(--space-3);
+    color: var(--surface);
+    background: var(--brand);
+    border: 1px solid var(--brand);
+    border-radius: 0.55rem;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.quick-links a:hover {
+    background: var(--brand-dark);
+    border-color: var(--brand-dark);
+}
+
+/* B7: Photo gallery remains responsive */
+.photo-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+}
+
+.photo-container figure {
+    margin: 0;
+}
+
+.photo-container img {
+    display: block;
+    width: 100%;
+    height: 10rem;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    border-radius: 0.65rem;
+}
+
+.photo-container figcaption {
+    margin-top: var(--space-1);
+    color: var(--muted);
+    font-size: var(--text-xs);
+}
+
+/* B4: Form layout uses repeat(), fr and gap */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+}
+
+.form-field {
+    display: grid;
+    gap: 0.35rem;
+    margin-bottom: var(--space-3);
+}
+
+.form-field label,
+.choice-group legend {
+    font-size: var(--text-sm);
+    font-weight: 700;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.7rem 0.8rem;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+}
+
+input[type="email"],
+input[type="date"] {
+    background: var(--soft);
+    border-left: 4px solid var(--brand);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--muted);
+    font-style: italic;
+}
+
+.choice-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    margin: 0 0 var(--space-3);
+    padding: var(--space-2) 0 0;
+    border: 0;
+}
+
+.choice-group legend {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 0.25rem;
+}
+
+.choice-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--muted);
+    font-size: var(--text-sm);
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+}
+
+input[type="submit"],
+input[type="reset"] {
+    padding: 0.7rem 1.15rem;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    color: var(--surface);
+    background: var(--brand);
+}
+
+input[type="reset"] {
+    color: var(--surface);
+    background: var(--muted);
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    filter: brightness(0.95);
+}
+
+/* B8: Table gets horizontal scrolling instead of overflowing the page */
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 28rem;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 0.7rem;
+    border: 1px solid var(--border);
+    text-align: left;
+    font-size: var(--text-sm);
+}
+
+th {
+    color: var(--surface);
+    background: var(--brand);
+}
+
+tr:nth-child(even) {
+    background: var(--soft);
+}
+
+/* B2: Inner CSS Grid creates the large-screen main + sidebar arrangement */
+.sidebar {
+    display: grid;
+    gap: 0;
+    align-content: start;
+}
+
+/* B2 + footer consistency */
+.site-footer {
+    grid-area: footer;
+    padding: var(--space-6) 0;
+    color: var(--surface);
+    background: var(--ink);
+}
+
+.site-footer .eyebrow {
+    color: var(--accent);
+}
+
+.site-footer h2,
+.site-footer h3 {
+    color: var(--surface);
+}
+
+.footer-intro {
+    color: rgb(255 255 255 / 82%);
+}
+
+.contact-grid {
+    display: grid;
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+}
+
+.contact-grid p {
+    color: rgb(255 255 255 / 82%);
+}
+
+.site-footer a {
+    color: var(--accent);
+}
+
+/* A3: Semi-transparent colour is also used naturally for readable footer text */
+
+/* B5: Tablet breakpoint - navigation becomes visible and forms can use two columns */
+@media (min-width: 40rem) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+    }
+
+    .form-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .form-field--full {
+        grid-column: 1 / -1;
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* B5: Large desktop breakpoint - balanced main content + sidebar */
+@media (min-width: 64rem) {
+    .content-layout {
+        grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
+        align-items: start;
+        gap: var(--space-6);
+    }
+
+    .sidebar .section-card {
+        position: sticky;
+        top: 5rem;
+    }
+
+    .sidebar .student-data {
+        position: static;
+    }
+}
+
+
+/* Lab Assignment 6 additions - these styles support the new controls without changing the original layout. */
+.event-search-box {
+    display: grid;
+    gap: 0.4rem;
+    max-width: 34rem;
+    margin: 0 0 var(--space-3);
+}
+
+.event-search-box label {
+    font-size: var(--text-sm);
+    font-weight: 700;
+}
+
+.event-search-box input[type="search"] {
+    width: 100%;
+    padding: 0.7rem 0.8rem;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+}
+
+.event-status {
+    min-height: 1.5rem;
+    margin-bottom: var(--space-3);
+    color: var(--muted);
+    font-size: var(--text-sm);
+}
+
+.event-demo-note {
+    margin-top: -1rem;
+    margin-bottom: var(--space-5);
+    color: var(--muted);
+    font-size: var(--text-xs);
+}
+
+.event-card__details {
+    margin: var(--space-2) 0;
+    color: var(--muted);
+    font-size: var(--text-xs);
+}
+
+.event-card__status {
+    margin: 0 0 var(--space-3);
+    font-size: var(--text-sm);
+}
+
+.status-full {
+    color: var(--danger);
+}
+
+.status-few-left {
+    color: #a15c00;
+}
+
+.status-open {
+    color: var(--success);
+}
+
+.event-card.full {
+    border-top: 3px solid var(--danger);
+}
+
+.event-card--online {
+    border-bottom: 3px solid var(--brand);
+}
+
+.rsvp-button {
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 0.6rem 0.9rem;
+    color: var(--surface);
+    background: var(--brand);
+    border: 1px solid var(--brand);
+    border-radius: 0.5rem;
+    font: inherit;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.rsvp-button:hover:not(:disabled) {
+    background: var(--brand-dark);
+}
+
+.rsvp-button:disabled {
+    color: var(--surface);
+    background: var(--muted);
+    border-color: var(--muted);
+    cursor: not-allowed;
+}
+
+.form-message {
+    margin: var(--space-3) 0 0;
+    color: var(--brand-dark);
+    font-size: var(--text-sm);
+}
+
+/* B4: Show the navigation list when the mobile hamburger is opened. */
+@media (max-width: 39.999rem) {
+    .nav-inner {
+        flex-wrap: wrap;
+        padding: 0.35rem 0;
+    }
+
+    .nav-links.is-open {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 0.5rem 0 0.75rem;
+    }
+
+    .nav-links.is-open a {
+        width: 100%;
+    }
+}

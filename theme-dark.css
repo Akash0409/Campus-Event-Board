@@ -1,0 +1,125 @@
+
+body {
+    background-color: #111827;
+
+    color: #f9fafb;
+}
+
+
+#site-header {
+    background-color: #1f2937;
+
+    border-color: #4b5563;
+}
+
+
+nav {
+    background-color: #1f2937;
+}
+
+
+nav a {
+    color: #f9fafb;
+}
+
+
+nav a:hover {
+    color: #93c5fd;
+}
+
+
+main {
+    background-color: #111827;
+}
+
+
+main > section,
+main > article,
+.events,
+.page-actions {
+    background-color: #1f2937;
+
+    border-color: #4b5563;
+}
+
+
+h1,
+h2 {
+    color: #93c5fd;
+}
+
+
+h3 {
+    color: #f9fafb;
+}
+
+
+p {
+    color: #f9fafb;
+}
+
+
+figure {
+    background-color: #1f2937;
+
+    border-color: #4b5563;
+}
+
+
+figcaption {
+    background-color: #1f2937;
+
+    color: #f9fafb;
+}
+
+
+details {
+    background-color: #374151;
+
+    border-color: #6b7280;
+}
+
+
+address {
+    background-color: #374151;
+
+    color: #f9fafb;
+}
+
+
+code,
+samp,
+kbd {
+    background-color: #374151;
+
+    color: #f9fafb;
+}
+
+
+form {
+    background-color: #1f2937;
+
+    border-color: #4b5563;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+    background-color: #374151;
+
+    color: white;
+
+    border-color: #6b7280;
+}
+
+
+footer {
+    background-color: #030712;
+
+    color: white;
+}

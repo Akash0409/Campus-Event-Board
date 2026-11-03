@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Campus Event Board for IIIT Vadodara events, campus activities, registration and student information.">
+    <title>Campus Event Board | IIIT Vadodara</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="site-shell">
+
+        <a class="skip-link" href="#main-content">Skip to main content</a>
+
+        <!-- B2: Page grid area - header -->
+        <header class="site-header">
+            <div class="container header-inner">
+                <a class="brand" href="#main-content" aria-label="Campus Event Board home">
+                    <img src="flag.png" width="70" height="70" alt="Campus Event Board logo">
+                    <span class="brand-text">
+                        <span class="brand-title">Campus Event Board</span>
+                        <span class="brand-subtitle">IIIT Vadodara</span>
+                    </span>
+                </a>
+            </div>
+        </header>
+
+        <!-- B2: Page grid area - navigation -->
+        <nav class="main-nav" aria-label="Primary navigation">
+            <div class="container nav-inner">
+                <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+                    <span aria-hidden="true">&#9776;</span>
+                    <span>Menu</span>
+                </button>
+
+                <!-- B6: Hidden on phones and revealed as flex on wider screens -->
+                <div class="nav-links">
+                    <a href="#main-content" class="active" aria-current="page">Home</a>
+                    <a href="#footer">Contact Us</a>
+                    <a href="About.html">About</a>
+                    <a href="Loggin.html">Login</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- B2: Page grid area - main -->
+        <main id="main-content" class="site-main">
+
+            <section class="hero container" aria-labelledby="hero-title">
+                <div class="hero-media">
+                    <img src="campus.jpg" alt="IIIT Vadodara Gandhinagar Campus">
+                    <div class="hero-overlay">
+                        <p class="eyebrow">Campus Events &amp; Activities</p>
+                        <h1 id="hero-title">Stay Connected with Campus Life</h1>
+                        <p>Discover events, achievements, registration details and student activities at IIIT Vadodara.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="container content-layout">
+
+                <section class="events-panel" aria-labelledby="events-title">
+                    <header class="section-heading">
+                        <p class="eyebrow">Upcoming Events</p>
+                        <h2 id="events-title">Organizing Events at IIIT Vadodara</h2>
+                        <p>Event Organization &amp; Management at IIIT Vadodara.</p>
+                        <p>Organizing and Managing Events at IIIT Vadodara.</p>
+                        <blockquote class="event-quote">
+                            “Innovate, Learn, Collaborate and Excel through every event.”
+                        </blockquote>
+                    </header>
+
+                    <!-- B6: Search events while typing; Escape clears the search. -->
+                    <div class="event-search-box">
+                        <label for="event-search">Search Events</label>
+                        <input type="search" id="event-search" placeholder="Search by event name or category..." autocomplete="off">
+                    </div>
+
+                    <!-- B7: This message displays Loading, Success, and Error states. -->
+                    <p id="event-status" class="event-status" role="status" aria-live="polite">Loading events...</p>
+
+                    <!-- B2: JavaScript creates the event cards from events.json in this container. -->
+                    <div class="event-grid"></div>
+                    <p class="event-demo-note">Note: Seat counts and online availability are sample values for the Lab 6 demonstration.</p>
+                    <!-- B4: Show the first title read from events.xml. -->
+                    <p id="xml-title-note" class="event-demo-note" role="status" aria-live="polite">First XML event title: Loading...</p>
+                    <!-- B5: Show the UTF-8 byte sizes of events.json and events.xml. -->
+                    <p id="file-size-note" class="event-demo-note" role="status" aria-live="polite">JSON/XML file sizes: checking...</p>
+
+                    <section class="section-card event-links" aria-labelledby="quick-events-title">
+                        <div class="section-heading compact-heading">
+                            <p class="eyebrow">Explore</p>
+                            <h2 id="quick-events-title">Check College Campus Events</h2>
+                        </div>
+                        <div class="quick-links">
+                            <a href="Websites.png">College Fest</a>
+                            <a href="Websites.png">Tech Fest</a>
+                            <a href="Websites.png">Sports Day</a>
+                            <a href="Websites.png">Hackathon</a>
+                            <a href="Websites.png">Seminar</a>
+                        </div>
+                    </section>
+
+                    <section class="section-card college-photos" aria-labelledby="photos-title">
+                        <div class="section-heading compact-heading">
+                            <p class="eyebrow">Gallery</p>
+                            <h2 id="photos-title">College Campus Photos</h2>
+                        </div>
+                        <div class="photo-container">
+                            <figure>
+                                <img src="GNC.jpg" alt="Gandhinagar Campus">
+                                <figcaption>Gandhinagar Campus</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="ICD.jpg" alt="ICD Campus">
+                                <figcaption>ICD Campus</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="DUMAND_CAMPUS.jpg" alt="Diu Campus">
+                                <figcaption>Diu Campus</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="GNC.jpg" alt="Gandhinagar Campus">
+                                <figcaption>Gandhinagar Campus</figcaption>
+                            </figure>
+                        </div>
+                    </section>
+                </section>
+
+                <!-- B5: Sidebar appears on large screens using the inner CSS Grid layout -->
+                <aside class="sidebar" aria-label="Campus information and registration">
+                    <section class="section-card registration" aria-labelledby="registration-title">
+                        <div class="section-heading compact-heading">
+                            <p class="eyebrow">Participation</p>
+                            <h2 id="registration-title">Event Registration</h2>
+                            <p>Use the form below to practise the registration layout from the previous lab.</p>
+                        </div>
+
+                        <form action="#" method="post" novalidate> <!-- B8: JavaScript checks validity with checkValidity(). -->
+                            <div class="form-grid">
+                                <div class="form-field form-field--full">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" id="name" name="name" placeholder="Enter your name" autocomplete="name" required>
+                                </div>
+
+                                <div class="form-field">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" placeholder="Enter your email" autocomplete="email" required>
+                                </div>
+
+                                <div class="form-field">
+                                    <label for="mobile">Mobile Number</label>
+                                    <input type="tel" id="mobile" name="mobile" placeholder="Enter your 10-digit number" autocomplete="tel" pattern="[0-9]{10}" title="Enter a 10-digit mobile number." required> <!-- B8: pattern + required validation. -->
+                                </div>
+
+                                <div class="form-field">
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="new-password" required>
+                                </div>
+
+                                <div class="form-field">
+                                    <label for="dob">Date of Birth</label>
+                                    <input type="date" id="dob" name="dob">
+                                </div>
+
+                                <div class="form-field">
+                                    <label for="course">Select Course</label>
+                                    <select id="course" name="course">
+                                        <option value="">--Select Course--</option>
+                                        <option value="mca">MCA</option>
+                                        <option value="bca">BCA</option>
+                                        <option value="btech">B.Tech</option>
+                                        <option value="mtech">M.Tech</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <fieldset class="choice-group">
+                                <legend>Gender</legend>
+                                <label><input type="radio" name="gender" value="Male"> Male</label>
+                                <label><input type="radio" name="gender" value="Female"> Female</label>
+                                <label><input type="radio" name="gender" value="Other"> Other</label>
+                            </fieldset>
+
+                            <fieldset class="choice-group">
+                                <legend>Hobbies</legend>
+                                <label><input type="checkbox" name="hobby" value="Coding"> Coding</label>
+                                <label><input type="checkbox" name="hobby" value="Sports"> Sports</label>
+                                <label><input type="checkbox" name="hobby" value="Reading"> Reading</label>
+                            </fieldset>
+
+                            <div class="form-field">
+                                <label for="address">Address</label>
+                                <textarea id="address" name="address" rows="4" placeholder="Enter your address"></textarea>
+                            </div>
+
+                            <div class="form-actions">
+                                <input type="submit" value="Register">
+                                <input type="reset" value="Reset">
+                            </div>
+                            <!-- B8: Display the form validation result. -->
+                            <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+                        </form>
+                    </section>
+
+                    <section class="section-card student-data" aria-labelledby="student-data-title">
+                        <div class="section-heading compact-heading">
+                            <p class="eyebrow">Reference</p>
+                            <h2 id="student-data-title">Some Student Data</h2>
+                        </div>
+                        <div class="table-wrap">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Contact</th>
+                                        <th scope="col">ID</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Sachin</td>
+                                        <td>+911234567892</td>
+                                        <td>3356</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sadanand</td>
+                                        <td>+911234567845</td>
+                                        <td>12325</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Santosh</td>
+                                        <td>+911234567892</td>
+                                        <td>123001</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shivaji</td>
+                                        <td>+911234567868</td>
+                                        <td>121253</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </aside>
+            </div>
+        </main>
+
+        <!-- B2: Page grid area - footer -->
+        <footer id="footer" class="site-footer">
+            <div class="container footer-inner">
+                <p class="eyebrow">Contact</p>
+                <h2>IIIT Vadodara - College Event Management</h2>
+                <p class="footer-intro">If you have any questions about college events, registrations, or participation, please contact us using the details below.</p>
+
+                <div class="contact-grid">
+                    <div>
+                        <h3>Contact Information</h3>
+                        <p><strong>College:</strong> Indian Institute of Information Technology Vadodara</p>
+                        <p><strong>Campus:</strong> Gandhinagar, Gujarat, India</p>
+                    </div>
+                    <div>
+                        <h3>Get in Touch</h3>
+                        <p><strong>Email:</strong> events@iiitvadodara.ac.in</p>
+                        <p><strong>Phone:</strong> +91 98765 43210</p>
+                        <p><a href="https://www.w3.org/">Visit the W3C website</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- A1: Link the Lab 6 JavaScript file just before the closing body tag. -->
+    <script src="script.js" defer></script>
+</body>
+
+</html>
