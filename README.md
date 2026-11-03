@@ -66,7 +66,7 @@ The selected records are existing project events: HACER 2025 Conference, 7th Int
 
 ## Lab 7 screenshots
 
-The folder `Output Screenshort/LAB 7/` contains:
+The following six Lab 7 screenshots are uploaded in the repository root:
 
 1. `01_Event_Cards.png` - three event cards rendered from JSON (B1).
 2. `02_Console_B3_B4_B5.png` - JSON round-trip, XML title, and file sizes (B3-B5).
@@ -77,4 +77,9 @@ The folder `Output Screenshort/LAB 7/` contains:
 
 ## GitHub status
 
-The updated project is prepared locally. It has not been pushed to GitHub from this update. Add the public repository URL here after pushing the files. Check GitHub Pages separately if it is enabled.
+GitHub Repository:
+https://github.com/Akash0409/Campus-Event-Board
+
+The complete Lab 7 project, source files,
+documentation and six screenshots have
+been uploaded to this public repository.
