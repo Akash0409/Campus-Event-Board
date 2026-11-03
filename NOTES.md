@@ -137,5 +137,6 @@ Validation is important because it helps find missing or incorrect values before
 
 I chose JSON for the Event Board page because the website uses JavaScript. JavaScript can load JSON with `fetch()` and `response.json()`, and the data can be used directly to create event cards. XML is a better choice when a system or web service specifically exchanges structured XML messages, for example a SOAP web service.
 
-**GitHub repository link:** ______________________________________________
+**GitHub repository link:** https://github.com/Akash0409/Campus-Event-Board
+
 
